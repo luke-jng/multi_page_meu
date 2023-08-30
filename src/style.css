@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("./images/petr-sevcovic-cafebg-unsplash.jpg");
+    background-size: cover;
+}
+
+#nav_bar {
+    background-color: beige;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+    padding: 5px; 
+    margin: 5px;
+    background-color: lightblue;
+}
