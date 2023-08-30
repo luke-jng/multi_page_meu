@@ -94,9 +94,9 @@ li:hover {
     font-family: 'Times New Roman', Times, serif;
 }
 
-/* Drinks Page Styles */
+/* Drinks/Pastries Page Styles */
 
-#menu_container { /*id also in pastries page*/
+#menu_container, #contact_container { /*id also in pastries page*/
     background-color: rgb(21, 18, 14);
     opacity: 0.85;
 
@@ -107,7 +107,7 @@ li:hover {
     text-align: center;
 }
 
-#drinks_header, #pastries_header {
+#drinks_header, #pastries_header, #contactus_header {
     color: white;
     font-size: 55px;
 }
@@ -143,4 +143,16 @@ li:hover {
     text-align: left;
     width: 90%;
     margin-left: 3%;
+}
+
+/* Contact Page Styles */
+
+#contact_one, #contact_two, #contact_three, #business_hours {
+    color: white;
+    font-size: 30px;
+
+    width: 600px;;
+    margin: 5px auto; 
+
+    text-align: left;
 }

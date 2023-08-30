@@ -16,7 +16,7 @@ const contactElems = () => {
 
     const contactOne = document.createElement('div');
     contactOne.id = "contact_one";
-    contactOne.innerText = "Phone: (111)222-3333"
+    contactOne.innerText = "Phone: (111) 222-3333"
 
     const contactTwo = document.createElement('div');
     contactTwo.id = "contact_two";
@@ -24,11 +24,11 @@ const contactElems = () => {
 
     const contactThree = document.createElement('div');
     contactThree.id = "contact_three";
-    contactThree.innerText = "Fax: (555)666-7777"
+    contactThree.innerText = "Fax: (555) 666-7777"
 
     const businessHours = document.createElement('div');
     businessHours.id = "business_hours";
-    businessHours.innerText = "Mon - Sat : 7 AM - 5 PM"
+    businessHours.innerText = "Business Hours: 7 AM - 5 PM (Mon - Sat)"
 
     contactContainer.appendChild(contactHeader);
     contactContainer.appendChild(contactOne);
