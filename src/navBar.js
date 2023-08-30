@@ -4,6 +4,12 @@ const navBar = () => {
     //insert navbar html into html here
     const navElem = document.createElement('nav');
     navElem.id = "nav_bar";
+
+    const navLogo = document.createElement('div');
+    navLogo.id = "nav_logo";
+    navLogo.innerText = "SomeCafe"
+
+
     const unorderedListElem = document.createElement('ul');
 
     const listItemHome = document.createElement('li');
@@ -20,7 +26,7 @@ const navBar = () => {
 
     const listItemAboutUs = document.createElement('li');
     listItemAboutUs.id = 'contactus_tab';
-    listItemAboutUs.innerText = "Contact Us"
+    listItemAboutUs.innerText = "Contact"
 
     //append list items into the unorderd list
     unorderedListElem.appendChild(listItemHome);
@@ -28,6 +34,9 @@ const navBar = () => {
     unorderedListElem.appendChild(listItemPastries);
     unorderedListElem.appendChild(listItemAboutUs);
 
+
+    //append logo into nav element
+    navElem.appendChild(navLogo);
     //append the unordered list into nav element
     navElem.appendChild(unorderedListElem);
 

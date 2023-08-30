@@ -3,16 +3,144 @@ body {
     padding: 0;
     background-image: url("./images/petr-sevcovic-cafebg-unsplash.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "Arial";
 }
 
+/* Navigation styles */
 #nav_bar {
-    background-color: beige;
+    background-color: rgb(21, 18, 14);
+    padding-top: 15px;
+    padding-bottom: 10px;
+
+    display: flex;
+    align-items: center; /* vertical axis*/
+    justify-content: space-between; /* horizontal axis*/
+
+}
+
+#nav_logo {
+    font-size: 45px; 
+    font-weight: bold;
+    margin-left: 25px;
+    color:white;
+}
+    
+ul {
+    margin-right: 25px;
 }
 
 li {
     list-style: none;
     display: inline-block;
-    padding: 5px; 
-    margin: 5px;
-    background-color: lightblue;
+    margin-right: 15px;
+    font-size: 25px; 
+    color: white;
+}
+
+li:hover {
+    /* text-decoration: underline; */
+    color: lightgreen;
+}
+
+/* Footer Styles*/
+
+#footer_container {
+    background-color: rgb(21, 18, 14);
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    text-align: center;
+}
+
+#note_one {
+    color: white;
+    font-size: 15px;
+}
+
+/* Home page styles */
+
+#home_container {
+    background-color: rgb(21, 18, 14);
+    opacity: 0.85;
+
+    margin-top: 27vh;
+    padding-top: 20px;
+    padding-bottom: 25px;
+    
+    text-align: center;
+}
+
+#home_header, #home_motto, #home_description {
+    color: white;
+}
+
+#home_header{
+    font-size: 55px;
+    margin-bottom: 0;
+}
+
+#home_motto{
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#home_description {
+    width: 500px;
+    margin: 15px auto;
+    
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Drinks Page Styles */
+
+#menu_container { /*id also in pastries page*/
+    background-color: rgb(21, 18, 14);
+    opacity: 0.85;
+
+    margin-top: 27vh;
+    padding-top: 20px;
+    padding-bottom: 25px;
+    
+    text-align: center;
+}
+
+#drinks_header, #pastries_header {
+    color: white;
+    font-size: 55px;
+}
+
+#greentea, #blacktea, #lemonade, #croissant, #doughnut, #pudding{ /*container for green tea, black tea, lemonade items*/
+    color: white;
+    font-size: 30px;
+
+    width: 45vw;
+    margin: 5px auto; /* 5px top bottom and auto between for centering container*/
+    /* text-align: left; */
+}
+
+#greentea_head, #blacktea_head, #lemonade_head, #croissant_head, #doughnut_head, #pudding_head {
+    display: flex;
+    align-items: center; /* vertical axis*/
+    justify-content: space-between; /* horizontal axis ; puts the name and price on the respective ends of greatea head*/ 
+}
+
+#greentea_name, #blacktea_name, #lemonade_name, #croissant_name, #doughnut_name, #pudding_name {
+    white-space: nowrap; /*stop things from going to next line if container width not big enough*/
+    overflow: hidden;     /*doesn't add a scrollbar when things in a container are more than the size of the container width; overflow none just cuts it off*/
+}
+#greentea_name::after, #blacktea_name::after, #lemonade_name::after, #croissant_name::after, #doughnut_name::after, #pudding_name::after{
+    content: ".................................................................................................................................";
+}
+
+#greentea_description, #blacktea_description, #lemonade_description, #croissant_description, #doughnut_description, #pudding_description {
+    font-size: 15px;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    text-align: left;
+    width: 90%;
+    margin-left: 3%;
 }
