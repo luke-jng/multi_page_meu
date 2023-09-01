@@ -9,59 +9,47 @@ const drinkMenuElems = () => {
     delPageContent(contentDiv);
     
     //I suggest putting all the below into a single container div for ease of removal
-    const menuHeader = document.createElement('h2');
-    menuHeader.id = "drinks_header";
-    menuHeader.innerText = "Drinks";
+    const coldDrinkHeader = document.createElement('h2');
+    coldDrinkHeader.id = "drinks_header";
+    coldDrinkHeader.innerText = "Cold Drinks";
 
-    // greentea Item generation-----------------------------
-    // const greenTeaElem = document.createElement('div');
-    // greenTeaElem.id = "greentea";
+    const greenTeaElem = menuItemGen('greentea', "Green Tea", "$5.99", "placeholder");
+    const blackTeaElem = menuItemGen('blacktea', "Black Tea", "$5.99", "placeholder");
+    const lemonadeElem = menuItemGen('lemonade', "Lemonade", "$3.99", "placeholder");
 
-    // const greenTeaHead = document.createElement('div');
-    // greenTeaHead.id = 'greentea_head';
+    const hotDrinkHeader = document.createElement('h2');
+    hotDrinkHeader.id = 'drinks_header2';
+    hotDrinkHeader.innerText = "Hot Drinks";
 
-    // const greenTeaName = document.createElement('div');
-    // greenTeaName.id = 'greentea_name';
-    // greenTeaName.innerText = "Green Tea";
-    
-    // const greenTeaPrice = document.createElement('div');
-    // greenTeaPrice.id = "greentea_price";
-    // greenTeaPrice.innerText = "$5.99";
+    const coffeeElem = menuItemGen('coffee', "Coffee", "$4.99", "placeholder")
+    const latteElem = menuItemGen('latte', "Latte", "$7.99", "placeholder")
+    const cappucinoElem = menuItemGen('cappucino', "Cappucino", "$6.99", "placeholder")
 
-    // greenTeaHead.appendChild(greenTeaName);
-    // greenTeaHead.appendChild(greenTeaPrice);
-
-    // const greenTeaDescription = document.createElement('p');
-    // greenTeaDescription.id = "greentea_description";
-    // greenTeaDescription.innerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
-
-    // greenTeaElem.appendChild(greenTeaHead);
-    // greenTeaElem.appendChild(greenTeaDescription);
-    // greentea item generation-------------------------------
-
-
-    const greenTeaElem = menuItemGen('greentea', "Green Tea", "$5.99", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ");
-    const blackTeaElem = menuItemGen('blacktea', "Black Tea", "$5.99", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ");
-    const lemonadeElem = menuItemGen('lemonade', "Lemonade", "$3.99", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ");
-    // const blackTeaElem = document.createElement('div');
-    // blackTeaElem.id = "black_tea";
-    // blackTeaElem.innerText = "Black Tea";
-
-    // const lemonadeElem = document.createElement('div');
-    // lemonadeElem.id = "lemonade";
-    // lemonadeElem.innerText = "Lemonade";
 
     const menuContainer = document.createElement('div');
-    menuContainer.id = 'menu_container'
+    menuContainer.id = 'menu_container';
+
+    // const menuContainer2 = document.createElement('div');
+    // menuContainer2.id = 'menu_container';
 
     //update: single container finished
-    menuContainer.appendChild(menuHeader);
+    menuContainer.appendChild(coldDrinkHeader);
     menuContainer.appendChild(greenTeaElem);
-    
     menuContainer.appendChild(blackTeaElem);
     menuContainer.appendChild(lemonadeElem);
 
+    menuContainer.appendChild(hotDrinkHeader);
+    menuContainer.appendChild(coffeeElem);
+    menuContainer.appendChild(latteElem);
+    menuContainer.appendChild(cappucinoElem);
+
+    // menuContainer2.appendChild(hotDrinkHeader);
+    // menuContainer2.appendChild(coffeeElem);
+    // menuContainer2.appendChild(latteElem);
+    // menuContainer2.appendChild(cappucinoElem);
+
     contentDiv.appendChild(menuContainer);
+    // contentDiv.appendChild(menuContainer2);
 }
 
 const drinkTabClick = () => {

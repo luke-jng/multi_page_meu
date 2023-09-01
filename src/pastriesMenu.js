@@ -7,23 +7,20 @@ const pastriesMenuElems = () => {
     
     const menuHeader = document.createElement('h2');
     menuHeader.id = "pastries_header";
-    menuHeader.innerText = "Pastries";
+    menuHeader.innerText = "Classics";
 
-    // const croissantElem = document.createElement('div');
-    // croissantElem.id = "croissant";
-    // croissantElem.innerText = "Croissant";
+    const croissantElem = menuItemGen('croissant', "Croissant", "$4.99", "placeholder");
+    const doughnutElem = menuItemGen('doughnut', "Doughnut", "$2.99", "placeholder");
+    const puddingElem = menuItemGen('pudding', "Pudding", "$6.99", "placeholder");
 
-    // const doughnutElem = document.createElement('div');
-    // doughnutElem.id = "doughnut";
-    // doughnutElem.innerText = "Doughnut";
+    
+    const menuHeader2 = document.createElement('h2');
+    menuHeader2.id = "pastries_header";
+    menuHeader2.innerText = "Specials";
 
-    // const puddingElem = document.createElement('div');
-    // puddingElem.id = "pudding";
-    // puddingElem.innerText = "Pudding";
-
-    const croissantElem = menuItemGen('croissant', "Croissant", "$4.99", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ");
-    const doughnutElem = menuItemGen('doughnut', "Doughnut", "$2.99", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ");
-    const puddingElem = menuItemGen('pudding', "Pudding", "$6.99", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ");
+    const parfaitElem = menuItemGen('parfait', "Parfait", "$4.99", "placeholder");
+    const tiramisuElem = menuItemGen('tiramisu', "Tiramisu", "$2.99", "placeholder");
+    const cakeElem = menuItemGen('cake', "Cake", "$6.99", "placeholder");
 
     const menuContainer = document.createElement('div');
     menuContainer.id = 'menu_container'
@@ -32,6 +29,12 @@ const pastriesMenuElems = () => {
     menuContainer.appendChild(croissantElem);
     menuContainer.appendChild(doughnutElem);
     menuContainer.appendChild(puddingElem);
+
+    menuContainer.appendChild(menuHeader2);
+    menuContainer.appendChild(parfaitElem);
+    menuContainer.appendChild(tiramisuElem);
+    menuContainer.appendChild(cakeElem);
+
 
     contentDiv.appendChild(menuContainer);
 }

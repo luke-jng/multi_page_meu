@@ -4,6 +4,7 @@ body {
     background-image: url("./images/petr-sevcovic-cafebg-unsplash.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: "Arial";
 }
 
@@ -17,6 +18,10 @@ body {
     align-items: center; /* vertical axis*/
     justify-content: space-between; /* horizontal axis*/
 
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
 }
 
 #nav_logo {
@@ -96,23 +101,24 @@ li:hover {
 
 /* Drinks/Pastries Page Styles */
 
-#menu_container, #contact_container { /*id also in pastries page*/
+#menu_container, #contactpage_container { /*id also in pastries page*/
     background-color: rgb(21, 18, 14);
     opacity: 0.85;
 
     margin-top: 27vh;
+    margin-bottom: 27vh;
     padding-top: 20px;
     padding-bottom: 25px;
     
     text-align: center;
 }
 
-#drinks_header, #pastries_header, #contactus_header {
+#drinks_header, #drinks_header2, #pastries_header, #contactsupport_header, #feedback_header, #location_header{
     color: white;
     font-size: 55px;
 }
 
-#greentea, #blacktea, #lemonade, #croissant, #doughnut, #pudding{ /*container for green tea, black tea, lemonade items*/
+.item_id{ /*container for green tea, black tea, lemonade items*/
     color: white;
     font-size: 30px;
 
@@ -121,21 +127,22 @@ li:hover {
     /* text-align: left; */
 }
 
-#greentea_head, #blacktea_head, #lemonade_head, #croissant_head, #doughnut_head, #pudding_head {
+.item_head {
     display: flex;
     align-items: center; /* vertical axis*/
     justify-content: space-between; /* horizontal axis ; puts the name and price on the respective ends of greatea head*/ 
 }
 
-#greentea_name, #blacktea_name, #lemonade_name, #croissant_name, #doughnut_name, #pudding_name {
+.item_name {
     white-space: nowrap; /*stop things from going to next line if container width not big enough*/
     overflow: hidden;     /*doesn't add a scrollbar when things in a container are more than the size of the container width; overflow none just cuts it off*/
 }
-#greentea_name::after, #blacktea_name::after, #lemonade_name::after, #croissant_name::after, #doughnut_name::after, #pudding_name::after{
+
+.item_name::after {
     content: ".................................................................................................................................";
 }
 
-#greentea_description, #blacktea_description, #lemonade_description, #croissant_description, #doughnut_description, #pudding_description {
+.item_description {
     font-size: 15px;
     font-style: italic;
     font-family: 'Times New Roman', Times, serif;
@@ -146,13 +153,55 @@ li:hover {
 }
 
 /* Contact Page Styles */
-
-#contact_one, #contact_two, #contact_three, #business_hours {
+#contactsupportphone, #contactsupportemail {
     color: white;
     font-size: 30px;
 
-    width: 600px;;
+    width: 450px;;
     margin: 5px auto; 
 
-    text-align: left;
+    display: flex;
+    align-items: center; /* vertical axis*/
+    justify-content: space-between; /* horizontal axis ; puts the name and price on the respective ends of greatea head*/ 
 }
+
+#feedback_form {
+    color: white;
+}
+
+#locationaddress {
+    color: white;
+    font-size: 30px;
+
+    width: 500px;;
+    margin: 5px auto; 
+}
+
+#businesshours {
+    color: white;
+    font-size: 30px;
+
+    width: 350px;;
+    margin: 5px auto; 
+}
+
+#businesshours_desc1, #businesshours_desc2 {
+    display: flex;
+    align-items: center; /* vertical axis*/
+    justify-content: space-between; /* horizontal axis */
+}
+
+/* #form_inputname::before {
+    content: 'Name: ';
+    color: white;
+};
+
+#form_inputemail::before{
+    content: 'Email:';
+    color: white;
+}
+
+#form_inputtext {
+    content: 'Feedback: ';
+    color: white;
+} */
