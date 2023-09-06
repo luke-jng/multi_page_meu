@@ -5,7 +5,7 @@ function delPageContent(insertedElem) {
     }
 }
 
-function menuItemGen(id, name, price, description){
+function menuItemGen(id, name, price, description, image, image_desc){
     const itemElem = document.createElement('div');
     itemElem.id = `${id}`;
     itemElem.className = 'item_id';
@@ -39,6 +39,14 @@ function menuItemGen(id, name, price, description){
 
     itemElem.appendChild(itemHead);
     itemElem.appendChild(itemDescription);
+
+    const itemImage = new Image(300, 300);
+    itemImage.id = `${id}_image`;
+    itemImage.className = 'item_image';
+    itemImage.src = image;
+    itemImage.alt = image_desc
+
+    itemElem.appendChild(itemImage);
 
     return itemElem;
 }

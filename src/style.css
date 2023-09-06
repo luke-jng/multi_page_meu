@@ -28,7 +28,7 @@ body {
     font-size: 45px; 
     font-weight: bold;
     margin-left: 25px;
-    color:white;
+    color:lightgreen;
 }
     
 ul {
@@ -90,6 +90,8 @@ li:hover {
     font-size: 30px;
     font-style: italic;
     font-family: 'Times New Roman', Times, serif;
+
+    color: lightgreen;
 }
 
 #home_description {
@@ -156,6 +158,11 @@ li:hover {
     text-align: left;
     width: 90%;
     margin-left: 3%;
+}
+
+.item_image{
+    border-radius: 15px;
+    /* height: auto; */
 }
 
 /* Contact Page Styles */
