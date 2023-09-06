@@ -3,9 +3,6 @@ import { delPageContent } from "./helperFuncs";
 const genLineBreak = () => document.createElement('br');
 const contactElems = () => {
     const contentDiv = document.getElementById('content');
-    // while (contentDiv.hasChildNodes() && contentDiv.lastChild.id != "nav_bar") {
-    //     contentDiv.removeChild(contentDiv.lastChild);
-    // }
     delPageContent(contentDiv);
 
     const contactPageContainer = document.createElement('div');
@@ -17,8 +14,8 @@ const contactElems = () => {
     feedbackHeader.id = "feedback_header";
     feedbackHeader.innerText = "We'd love to hear about your experience!"
 
-    // const feedbackFormContainer = document.createElement('div');
-    // feedbackFormContainer.id = 'feedback_form_container';
+    const feedbackFormElem = document.createElement('div');
+    feedbackFormElem.id = 'feedback_form_container';
 
     const feedbackForm = document.createElement('form');
     feedbackForm.id = 'feedback_form';
@@ -57,30 +54,32 @@ const contactElems = () => {
 
     const feedbackSubmit = document.createElement('button');
     feedbackSubmit.id = 'feedback_submit';
+    feedbackSubmit.setAttribute('form','feedback_form');
     feedbackSubmit.innerText = 'Send'
-    
-    feedbackForm.appendChild(feedbackNameInputLabel);
-    feedbackForm.appendChild(genLineBreak());
-    feedbackForm.appendChild(feedbackNameInput);
-    feedbackForm.appendChild(genLineBreak());
 
-    feedbackForm.appendChild(feedbackEmailInputLabel);
-    feedbackForm.appendChild(genLineBreak());
-    feedbackForm.appendChild(feedbackEmailInput);
-    feedbackForm.appendChild(genLineBreak());
-    
-    feedbackForm.appendChild(feedbackTextAreaLabel);
-    feedbackForm.appendChild(genLineBreak());
-    feedbackForm.appendChild(feedbackTextArea);
-    feedbackForm.appendChild(genLineBreak());
+    feedbackForm.append(
+        feedbackNameInputLabel,
+        genLineBreak(),
+        feedbackNameInput,
+        genLineBreak(),
+        feedbackEmailInputLabel,
+        genLineBreak(),
+        feedbackEmailInput,
+        genLineBreak(),
+        feedbackTextAreaLabel,
+        genLineBreak(),
+        feedbackTextArea,
+    );
 
-    feedbackForm.appendChild(feedbackSubmit);
-
+    feedbackFormElem.append(
+        feedbackForm,
+        feedbackSubmit
+    );
 
     //--------------------------------------------------
     const contactHeader = document.createElement('h2');
     contactHeader.id = "contactsupport_header";
-    contactHeader.innerText = "You can reach us in the following ways!";
+    contactHeader.innerText = "For other inquiries, you can reach us in the following ways!";
 
     //--------------------------------------------------
     const contactPhoneElem = document.createElement('div');
@@ -121,7 +120,7 @@ const contactElems = () => {
     locationAddressElem.id = "locationaddress"
 
     const locationAddressHead = document.createElement('div');
-    locationAddressHead.id = 'locationaddresss_head'
+    locationAddressHead.id = 'locationaddress_head'
     locationAddressHead.innerText = 'Location'
 
     const locationAddressDesc = document.createElement('div');
@@ -132,9 +131,11 @@ const contactElems = () => {
     locationAddressMap.id = 'locationaddress_map';
     locationAddressMap.innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.617541157572!2d-73.98823932276575!3d40.74844047138831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1693603759857!5m2!1sen!2sus" width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
 
-    locationAddressElem.appendChild(locationAddressHead);
-    locationAddressElem.appendChild(locationAddressDesc);
-    locationAddressElem.appendChild(locationAddressMap);
+    locationAddressElem.append(
+        locationAddressHead,
+        locationAddressDesc,
+        locationAddressMap
+    )
 
     //business hours doesn't need a header
 
@@ -156,8 +157,10 @@ const contactElems = () => {
     businessHourDescTime1.id = 'businesshours_desc_time1';
     businessHourDescTime1.innerText = '7 AM - 5 PM';
 
-    businessHourDesc1.appendChild(businessHourDescDays1);
-    businessHourDesc1.appendChild(businessHourDescTime1);
+    businessHourDesc1.append(
+        businessHourDescDays1,
+        businessHourDescTime1
+    );
 
     const businessHourDesc2 = document.createElement('div');
     businessHourDesc2.id = 'businesshours_desc2';
@@ -170,26 +173,28 @@ const contactElems = () => {
     businessHourDescTime2.id = 'businesshours_desc_time2';
     businessHourDescTime2.innerText = 'Closed';
 
-    businessHourDesc2.appendChild(businessHourDescDays2);
-    businessHourDesc2.appendChild(businessHourDescTime2);
+    businessHourDesc2.append(
+        businessHourDescDays2,
+        businessHourDescTime2
+    )
 
-    businessHoursElem.appendChild(businessHoursHead);
-    businessHoursElem.appendChild(businessHourDesc1);
-    businessHoursElem.appendChild(businessHourDesc2);
+    businessHoursElem.append(
+        businessHoursHead,
+        businessHourDesc1,
+        businessHourDesc2
+    )
 
     //----------------------------------------------
-
-    contactPageContainer.appendChild(feedbackHeader);
-    contactPageContainer.appendChild(feedbackForm);
-
-    contactPageContainer.appendChild(contactHeader);
-    contactPageContainer.appendChild(contactPhoneElem);
-    contactPageContainer.appendChild(contactEmailElem);
-
-    contactPageContainer.appendChild(locationHeader);
-    contactPageContainer.appendChild(locationAddressElem);
-    
-    contactPageContainer.appendChild(businessHoursElem);
+    contactPageContainer.append(
+        feedbackHeader,
+        feedbackFormElem,
+        contactHeader,
+        contactPhoneElem,
+        contactEmailElem,
+        locationHeader,
+        locationAddressElem,
+        businessHoursElem
+    )
 
     contentDiv.appendChild(contactPageContainer);
 }
