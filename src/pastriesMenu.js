@@ -25,15 +25,16 @@ const pastriesMenuElems = () => {
     const menuContainer = document.createElement('div');
     menuContainer.id = 'menu_container'
 
-    menuContainer.appendChild(menuHeader);
-    menuContainer.appendChild(croissantElem);
-    menuContainer.appendChild(doughnutElem);
-    menuContainer.appendChild(puddingElem);
-
-    menuContainer.appendChild(menuHeader2);
-    menuContainer.appendChild(parfaitElem);
-    menuContainer.appendChild(tiramisuElem);
-    menuContainer.appendChild(cakeElem);
+    menuContainer.append(
+        menuHeader,
+        croissantElem,
+        doughnutElem,
+        puddingElem,
+        menuHeader2,
+        parfaitElem,
+        tiramisuElem,
+        cakeElem
+    )
 
 
     contentDiv.appendChild(menuContainer);

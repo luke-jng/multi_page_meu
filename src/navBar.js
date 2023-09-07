@@ -1,3 +1,5 @@
+import { homeContentElems } from "./home";
+
 const navBar = () => {
     const contentDiv = document.getElementById('content');
 
@@ -45,4 +47,12 @@ const navBar = () => {
 
 };
 
-export { navBar }
+const logoClick = () => {
+    const logoTab = document.getElementById('nav_logo');
+
+    logoTab.addEventListener('click', () => {
+        homeContentElems();
+    })
+}
+
+export { navBar, logoClick }
