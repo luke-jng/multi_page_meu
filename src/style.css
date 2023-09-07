@@ -220,9 +220,11 @@ label {
 }
 
 input, textarea {
-    width: 100%;
+    width: 95%;
     margin-bottom: 15px;
-    padding: 5px;
+    padding: 10px;
+    border-radius: 7px;
+    border-style: none;
 }
 
 #feedback_submit {
