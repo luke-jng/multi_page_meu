@@ -27,14 +27,20 @@ const navBar = () => {
     listItemPastries.innerText = "Pastries";
 
     const listItemAboutUs = document.createElement('li');
-    listItemAboutUs.id = 'contactus_tab';
-    listItemAboutUs.innerText = "Contact"
+    listItemAboutUs.id = 'aboutus_tab';
+    listItemAboutUs.innerText = "About Us"
+
+    const listItemContactUs = document.createElement('li');
+    listItemContactUs.id = 'contactus_tab';
+    listItemContactUs.innerText = "Contact"
 
     //append list items into the unorderd list
     unorderedListElem.appendChild(listItemHome);
     unorderedListElem.appendChild(listItemDrinks);
     unorderedListElem.appendChild(listItemPastries);
     unorderedListElem.appendChild(listItemAboutUs);
+    unorderedListElem.appendChild(listItemContactUs);
+
 
 
     //append logo into nav element
