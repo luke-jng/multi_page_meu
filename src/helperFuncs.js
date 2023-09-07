@@ -5,7 +5,7 @@ function delPageContent(insertedElem) {
     }
 }
 
-function menuItemGen(id, name, price, description, image, image_desc){
+function menuItemGen(id, name, price, description, image, image_desc, image_author_websource, image_author){
     const itemElem = document.createElement('div');
     itemElem.id = `${id}`;
     itemElem.className = 'item_id';
@@ -39,6 +39,10 @@ function menuItemGen(id, name, price, description, image, image_desc){
 
     itemElem.appendChild(itemHead);
     itemElem.appendChild(itemDescription);
+    
+    const itemImageContainer = document.createElement('div');
+    itemImageContainer.id = `${id}_imagecontainer`
+    itemImageContainer.className = 'item_imagecontainer';
 
     const itemImage = new Image(300, 300);
     itemImage.id = `${id}_image`;
@@ -46,7 +50,23 @@ function menuItemGen(id, name, price, description, image, image_desc){
     itemImage.src = image;
     itemImage.alt = image_desc
 
-    itemElem.appendChild(itemImage);
+    const itemImageOverlay = document.createElement('div');
+    itemImageOverlay.id = `${id}_imageoverlay`;
+    itemImageOverlay.className = 'item_imageoverlay';
+    
+    const itemImageOverlayContent = document.createElement('div');
+    itemImageOverlayContent.id = `${id}_imageoverlaycontent`;
+    itemImageOverlayContent.className = 'item_imageoverlaycontent';
+    itemImageOverlayContent.innerHTML = `Photo by <a class="refsource" href="https://unsplash.com/@${image_author_websource}">${image_author}</a> on <a class="refsource" href="https://unsplash.com">Unsplash</a>`
+
+    itemImageOverlay.appendChild(itemImageOverlayContent);
+
+    itemImageContainer.append(
+        itemImage,
+        itemImageOverlay
+    );
+
+    itemElem.appendChild(itemImageContainer);
 
     return itemElem;
 }
