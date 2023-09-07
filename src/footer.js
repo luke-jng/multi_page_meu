@@ -9,7 +9,7 @@ const footerElem = () => {
 
     const noteOne = document.createElement('li');
     noteOne.id = 'note_one';
-    noteOne.innerText = "Based on The Odin Project's Restaurant Page Project"
+    noteOne.innerHTML = 'Based on <a class="refsource" href="https://www.theodinproject.com/"> The Odin Project</a>&apos;s <a class="refsource" href="https://www.theodinproject.com/lessons/node-path-javascript-restaurant-page">Restaurant Page Project</a>';
 
     // const noteTwo = document.createElement('li');
     // noteTwo.id = 'note_two';
@@ -19,7 +19,15 @@ const footerElem = () => {
 
     footerContainer.appendChild(unorderedListFooterNotes);
 
-    footerDiv.appendChild(footerContainer);
+    const backgroundCredit = document.createElement('p');
+    backgroundCredit.id = 'background_credit';
+    backgroundCredit.innerHTML = `Background Photo by <a class="refsource" href="https://unsplash.com/@sevcovic23">Peter Sevcovic</a> on <a class="refsource" href="https://unsplash.com">Unsplash</a>`
+
+
+    footerDiv.append(
+        backgroundCredit,
+        footerContainer
+        );
 }
 
 export { footerElem }
