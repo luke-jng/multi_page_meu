@@ -272,15 +272,19 @@ input, textarea {
     content: "......................"
 }
 
-/*Image styling ---------------------------------------------------------------------*/ 
+/*Image styling --------------------------------------------------------------------- About Us images also included*/ 
 .item_imagecontainer {
     position: relative; /*position manipulation is not bound to the browser dimention and to where the container element currently is placed*/
     width: 300px;
     height: 300px;
     margin: 0 auto;
-  }
-  
-.item_imageoverlay {
+}
+
+.aboutus_imagecontainer {
+    position: relative;
+}
+
+.item_imageoverlay,  .aboutus_imageoverlay{
     position: absolute; /*the anility to manipulaste the position of overlay is absolute within the contiainer's relative position*/
     bottom: 0;
   
@@ -299,17 +303,17 @@ input, textarea {
     border-radius: 0 0 15px 15px;
   }
   
-.item_imagecontainer:hover .item_imageoverlay {
+.item_imagecontainer:hover .item_imageoverlay, .aboutus_imagecontainer:hover .aboutus_imageoverlay {
     height: 17%;
     opacity: 0.8;
   }
   
-.item_imageoverlaycontent {
+.item_imageoverlaycontent, .aboutus_imageoverlaycontent {
     opacity: 0;
     margin-top: 15px;
 }
 
-.item_imagecontainer:hover .item_imageoverlaycontent {
+.item_imagecontainer:hover .item_imageoverlaycontent, .aboutus_imagecontainer:hover .aboutus_imageoverlaycontent {
     opacity: 1;
 }
 
@@ -336,10 +340,10 @@ input, textarea {
 /*About Us page styling -----------------------------------------------------------------------------------------------*/
 
 /*used to identify the containers and their boundaries*/
-#aboutus_contentcontainer, #aboutus_container { 
+/* #aboutus_contentcontainer, #aboutus_container { 
     border-style:dotted;
     border-color: white;
-}
+} */
 
 #aboutus_contentcontainer {
     width: 65%;
@@ -357,4 +361,12 @@ input, textarea {
     margin-right: 2%;
 
     font-family:'Times New Roman', Times, serif;
+}
+
+.turn_white {
+    color: white;
+}
+
+#aboutus_image {
+    border-radius: 15px;
 }

@@ -12,9 +12,23 @@ const aboutUsElem = () => {
     aboutUsHeader.id = 'aboutus_header';
     aboutUsHeader.innerText = 'Who are We?';
 
-    const aboutUsImage = new Image(300, 600);
+
+    const aboutUsImageContainer = document.createElement('div');
+    aboutUsImageContainer.className = 'aboutus_imagecontainer';
+
+    const aboutUsImage = new Image(300, 550);
+    aboutUsImage.id = 'aboutus_image';
     aboutUsImage.src = '../src/images/mihai-moisa-cafeexterior-unsplash.jpg'
 
+    const aboutUsImageOverlay = document.createElement('div');
+    aboutUsImageOverlay.className  = 'aboutus_imageoverlay';
+    
+    const aboutUsImageOverlayContent = document.createElement('div');
+    aboutUsImageOverlayContent.className  = 'aboutus_imageoverlaycontent turn_white';
+    aboutUsImageOverlayContent.innerHTML = 'Photo by <a class="refsource" href="https://unsplash.com/@moisamihai092">Mihai Moisa</a> on <a class="refsource" href="https://unsplash.com">Unsplash</a>'
+
+    aboutUsImageOverlay.appendChild(aboutUsImageOverlayContent);
+    aboutUsImageContainer.append(aboutUsImage, aboutUsImageOverlay);
 
     const aboutUsContentContainer = document.createElement('div');
     aboutUsContentContainer.id = 'aboutus_contentcontainer';
@@ -24,7 +38,7 @@ const aboutUsElem = () => {
     aboutUsText.innerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 
     aboutUsContentContainer.append(
-        aboutUsImage, 
+        aboutUsImageContainer, 
         aboutUsText
     );
 
