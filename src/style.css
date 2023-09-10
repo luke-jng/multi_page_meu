@@ -35,12 +35,24 @@ ul {
     margin-right: 25px;
 }
 
+@media (max-width: 390px) {
+    ul {
+        padding-left: 3%;
+    }
+} 
+
 li {
     list-style: none;
     display: inline-block;
     margin-right: 15px;
     font-size: 25px; 
     color: white;
+}
+@media (max-width: 820px) {
+    li {
+        display: block;
+        margin-right: 10%;
+    }
 }
 
 li:hover {
@@ -104,6 +116,11 @@ li:hover {
     font-family: 'Times New Roman', Times, serif;
 }
 
+@media (max-width: 630px) {
+    #home_description {
+        width: 80%;
+    }
+}
 /* Drinks/Pastries Page Styles ------------------------------------------------------------------------------------------------*/
 
 #menu_container, #aboutus_container, #contactpage_container { /*id also in pastries page*/
