@@ -10,7 +10,7 @@ const aboutUsElem = () => {
 
     const aboutUsHeader = document.createElement('h2');
     aboutUsHeader.id = 'aboutus_header';
-    aboutUsHeader.innerText = 'Who are We?';
+    aboutUsHeader.innerText = 'Who We Are';
 
 
     const aboutUsImageContainer = document.createElement('div');

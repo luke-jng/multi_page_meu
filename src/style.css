@@ -75,6 +75,8 @@ li:hover {
     padding-bottom: 25px;
     
     text-align: center;
+
+    animation: fadein 0.5s linear;
 }
 
 #home_header, #home_motto, #home_description {
@@ -114,6 +116,7 @@ li:hover {
     padding-bottom: 25px;
     
     text-align: center;
+    animation: fadein 0.5s linear;
 }
 
 #drinks_header, #drinks_header2, #pastries_header, #aboutus_header, #contactsupport_header, #feedback_header, #location_header{
@@ -128,6 +131,7 @@ li:hover {
     width: 45vw;
     margin: 5px auto; /* 5px top bottom and auto between for centering container*/
     /* text-align: left; */
+    padding-bottom: 25px;
 }
 
 .item_head {
@@ -346,7 +350,7 @@ input, textarea {
 } */
 
 #aboutus_contentcontainer {
-    width: 65%;
+    width: 60%;
     display: flex;
     /*align-items: center;*/ /* vertical axis*/
     justify-content: space-between; /* horizontal axis ; puts the name and price on the respective ends of greatea head*/ 
@@ -360,7 +364,13 @@ input, textarea {
     margin-left: 2%;
     margin-right: 2%;
 
+
     font-family:'Times New Roman', Times, serif;
+
+    
+    border-style: dotted;
+    border-left: none;
+    border-right: none;
 }
 
 .turn_white {
@@ -369,4 +379,12 @@ input, textarea {
 
 #aboutus_image {
     border-radius: 15px;
+    /* border-style: dotted; */
+    height: 100%;
 }
+
+@keyframes fadein {
+    0% {opacity: 0;};
+    50% {opacity: 0.5;};
+    100% {opacity: 1;};
+};
