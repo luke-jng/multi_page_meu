@@ -71,7 +71,7 @@ const tabClickLightUp = () => {
             currTab.style.color = 'lightgreen';
             for (let i = 0; i < tabArr.length;  i++) {
                 if (tabArr[i] != tab) {
-                    document.getElementById(tabArr[i]).style.color = 'white';
+                    document.getElementById(tabArr[i]).style.color = '';
                 }
             }
         })
