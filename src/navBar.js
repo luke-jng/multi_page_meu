@@ -58,6 +58,12 @@ const logoClick = () => {
 
     logoTab.addEventListener('click', () => {
         homeContentElems();
+
+        const tabArr = ['drinks_tab', 'pastries_tab','aboutus_tab', 'contactus_tab'];
+        for (let i = 0; i < tabArr.length;  i++) {
+            document.getElementById(tabArr[i]).style.color = '';
+        }
+        document.getElementById('home_tab').style.color = 'lightgreen';
     })
 }
 
