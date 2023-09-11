@@ -61,4 +61,21 @@ const logoClick = () => {
     })
 }
 
-export { navBar, logoClick }
+const tabClickLightUp = () => {
+    const tabArr = ['home_tab', 'drinks_tab', 'pastries_tab','aboutus_tab', 'contactus_tab'];
+
+    document.getElementById(tabArr[0]).style.color = 'lightgreen';
+    tabArr.forEach((tab) => {
+        const currTab = document.getElementById(tab);
+        currTab.addEventListener('click', () => {
+            currTab.style.color = 'lightgreen';
+            for (let i = 0; i < tabArr.length;  i++) {
+                if (tabArr[i] != tab) {
+                    document.getElementById(tabArr[i]).style.color = 'white';
+                }
+            }
+        })
+    })
+}
+
+export { navBar, logoClick, tabClickLightUp }

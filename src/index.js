@@ -1,4 +1,4 @@
-import { navBar, logoClick } from './navBar';
+import { navBar, logoClick, tabClickLightUp} from './navBar';
 import { homeContentElems, homeTabClick } from './home';
 import { drinkTabClick } from './drinksMenu';
 import { pastriesTabClick } from './pastriesMenu';
@@ -9,6 +9,7 @@ import "./style.css";
 
 
 navBar();
+tabClickLightUp();
 footerElem()
 logoClick();
 homeContentElems();
