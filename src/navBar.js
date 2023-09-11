@@ -28,7 +28,7 @@ const navBar = () => {
 
     const listItemAboutUs = document.createElement('li');
     listItemAboutUs.id = 'aboutus_tab';
-    listItemAboutUs.innerText = "About Us"
+    listItemAboutUs.innerHTML = "About&nbsp;Us"
 
     const listItemContactUs = document.createElement('li');
     listItemContactUs.id = 'contactus_tab';
