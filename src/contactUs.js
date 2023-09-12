@@ -1,6 +1,23 @@
 import { delPageContent } from "./helperFuncs";
 
 const genLineBreak = () => document.createElement('br');
+
+const genFormInput = (inputId, inputName, inputType, placeholder) => {
+    const formInput = document.createElement('input');
+    formInput.setAttribute('id', inputId);
+    formInput.setAttribute('name', inputName);
+    formInput.setAttribute('type', inputType);
+    formInput.setAttribute('placeholder', placeholder);
+    return formInput;
+}
+
+const genElemnText = (tag, idName, innerTxt) => {
+    const newElem = document.createElement(tag);
+    newElem.id = idName;
+    newElem.innerText = innerTxt;
+    return newElem;
+}
+
 const contactElems = () => {
     const contentDiv = document.getElementById('content');
     delPageContent(contentDiv);
@@ -9,41 +26,24 @@ const contactElems = () => {
     contactPageContainer.id = "contactpage_container";
 
     //-------------------------------------------------
+    const feedbackHeader = genElemnText('h2', 'feedback_header', "We'd love to hear about your experience!");
 
-    const feedbackHeader = document.createElement('h2');
-    feedbackHeader.id = "feedback_header";
-    feedbackHeader.innerText = "We'd love to hear about your experience!"
+    const feedbackFormElem = genElemnText('div', 'feedback_form_container', '');
 
-    const feedbackFormElem = document.createElement('div');
-    feedbackFormElem.id = 'feedback_form_container';
+    const feedbackForm = genElemnText('form', 'feedback_form', '');
 
-    const feedbackForm = document.createElement('form');
-    feedbackForm.id = 'feedback_form';
-
-    const feedbackNameInputLabel = document.createElement('label');
+    const feedbackNameInputLabel = genElemnText('label', 'form_name_label', 'Name');
     feedbackNameInputLabel.setAttribute('for', 'form_inputname');
-    feedbackNameInputLabel.innerText = "Name";
 
+    const feedbackNameInput = genFormInput('form_inputname', 'form_inputname', 'text', 'Your name...');
 
-    const feedbackNameInput = document.createElement('input');
-    feedbackNameInput.setAttribute('id', 'form_inputname');
-    feedbackNameInput.setAttribute('name', 'form_inputname')
-    feedbackNameInput.setAttribute('type', 'text');
-    feedbackNameInput.setAttribute('placeholder', 'Your name...');
-
-    const feedbackEmailInputLabel = document.createElement('label');
+    const feedbackEmailInputLabel = genElemnText('label', 'form_email_label', 'Email');
     feedbackEmailInputLabel.setAttribute('for', 'form_inputemail');
-    feedbackEmailInputLabel.innerText = "Email";
 
-    const feedbackEmailInput = document.createElement('input');
-    feedbackEmailInput.setAttribute('id', 'form_inputemail');
-    feedbackEmailInput.setAttribute('name', 'form_inputemail');
-    feedbackEmailInput.setAttribute('type', 'text');
-    feedbackEmailInput.setAttribute('placeholder', 'Your email...');
+    const feedbackEmailInput = genFormInput('form_inputemail', 'form_inputemail', 'text', 'Your email...');
 
-    const feedbackTextAreaLabel = document.createElement('label');
+    const feedbackTextAreaLabel = genElemnText('label', 'form_inputtext_label', 'Feedback');
     feedbackTextAreaLabel.setAttribute('for', 'form_inputtext');
-    feedbackTextAreaLabel.innerText = "Feedback";
 
     const feedbackTextArea = document.createElement('textarea');
     feedbackTextArea.setAttribute('id', 'form_inputtext')
@@ -52,10 +52,8 @@ const contactElems = () => {
     feedbackTextArea.setAttribute('cols', "26");
     feedbackTextArea.setAttribute('placeholder', "Your feedback...")
 
-    const feedbackSubmit = document.createElement('button');
-    feedbackSubmit.id = 'feedback_submit';
+    const feedbackSubmit = genElemnText('button', 'feedback_submit', 'Send');
     feedbackSubmit.setAttribute('form','feedback_form');
-    feedbackSubmit.innerText = 'Send'
 
     feedbackForm.append(
         feedbackNameInputLabel,
@@ -77,55 +75,34 @@ const contactElems = () => {
     );
 
     //--------------------------------------------------
-    const contactHeader = document.createElement('h2');
-    contactHeader.id = "contactsupport_header";
-    contactHeader.innerText = "For other inquiries, you can reach us in the following ways!";
+    const contactHeader = genElemnText('h2', 'contactsupport_header', 'For other inquiries, you can reach us in the following ways!');
 
     //--------------------------------------------------
-    const contactPhoneElem = document.createElement('div');
-    contactPhoneElem.id = "contactsupportphone";
+    const contactPhoneElem = genElemnText('div', "contactsupportphone", '');
 
-    const contactPhoneName = document.createElement('div');
-    contactPhoneName.id = 'contactsupportphone_name';
-    contactPhoneName.innerText = 'Phone:';
+    const contactPhoneName = genElemnText('div', 'contactsupportphone_name', 'Phone:')
 
-    const contactPhoneNumber = document.createElement('div');
-    contactPhoneNumber.id = 'contactsupportphone_number'
-    contactPhoneNumber.innerText = "(000) 111-2222";
+    const contactPhoneNumber = genElemnText('div', 'contactsupportphone_number', '(000) 111-2222');
 
-    contactPhoneElem.appendChild(contactPhoneName);
-    contactPhoneElem.appendChild(contactPhoneNumber);
+    contactPhoneElem.append(contactPhoneName, contactPhoneNumber);
     //--------------------------------------------------
 
-    const contactEmailElem = document.createElement('div');
-    contactEmailElem.id = "contactsupportemail";
+    const contactEmailElem = genElemnText('div', 'contactsupportemail', '');
+    
+    const contactEmailName = genElemnText('div', 'contactsupportemail_name', 'Email:');
+    
+    const contactEmailAddr = genElemnText('div', 'contactsupportemail_addr', "support@somecafe.com");
 
-    const contactEmailName = document.createElement('div')
-    contactEmailName.id = 'contactsupportemail_name';
-    contactEmailName.innerText = 'Email:';
-
-    const contactEmailAddr = document.createElement('div');
-    contactEmailAddr.id = 'contactsupportemail_addr'
-    contactEmailAddr.innerText = "support@somecafe.com";
-
-    contactEmailElem.appendChild(contactEmailName);
-    contactEmailElem.appendChild(contactEmailAddr);
+    contactEmailElem.append(contactEmailName, contactEmailAddr);
 
     //--------------------------------------------------
-    const locationHeader = document.createElement('h2');
-    locationHeader.id = "location_header"
-    locationHeader.innerText = 'Come visit us!'
+    const locationHeader = genElemnText('h2', 'location_header', 'Come visit us!');
 
-    const locationAddressElem = document.createElement('div');
-    locationAddressElem.id = "locationaddress"
+    const locationAddressElem = genElemnText('div', 'locationaddress', '');
 
-    const locationAddressHead = document.createElement('div');
-    locationAddressHead.id = 'locationaddress_head'
-    locationAddressHead.innerText = 'Location'
+    const locationAddressHead = genElemnText('div', 'locationaddress_head', 'Location');
 
-    const locationAddressDesc = document.createElement('div');
-    locationAddressDesc.id = 'locationaddress_desc'
-    locationAddressDesc.innerText = '1301 6th Ave, New York, NY 10019'
+    const locationAddressDesc = genElemnText('div', 'locationaddress_desc', '1301 6th Ave, New York, NY 10019');
 
     const locationAddressMap = document.createElement('div')
     locationAddressMap.id = 'locationaddress_map';
@@ -138,40 +115,26 @@ const contactElems = () => {
     )
 
     //business hours doesn't need a header
+    const businessHoursElem = genElemnText('div', 'businesshours', '');
 
-    const businessHoursElem = document.createElement('div');
-    businessHoursElem.id = 'businesshours'
+    const businessHoursHead = genElemnText('div', 'businesshours_head', 'Business Hours');
 
-    const businessHoursHead = document.createElement('div');
-    businessHoursHead.id = "businesshours_head";
-    businessHoursHead.innerText = "Business Hours"
+    const businessHourDesc1 = genElemnText('div', 'businesshours_desc1', '');
 
-    const businessHourDesc1 = document.createElement('div');
-    businessHourDesc1.id = 'businesshours_desc1';
+    const businessHourDescDays1 = genElemnText('div', 'businesshours_desc_days1', 'Mon - Sat :');
 
-    const businessHourDescDays1 = document.createElement('div');
-    businessHourDescDays1.id = 'businesshours_desc_days1';
-    businessHourDescDays1.innerText = 'Mon - Sat :';
-
-    const businessHourDescTime1 = document.createElement('div');
-    businessHourDescTime1.id = 'businesshours_desc_time1';
-    businessHourDescTime1.innerText = '7 AM - 5 PM';
+    const businessHourDescTime1 = genElemnText('div', 'businesshours_desc_time1', '7 AM - 5 PM');
 
     businessHourDesc1.append(
         businessHourDescDays1,
         businessHourDescTime1
     );
 
-    const businessHourDesc2 = document.createElement('div');
-    businessHourDesc2.id = 'businesshours_desc2';
+    const businessHourDesc2 = genElemnText('div', 'businesshours_desc2', '');
 
-    const businessHourDescDays2 = document.createElement('div');
-    businessHourDescDays2.id = 'businesshours_desc_days2';
-    businessHourDescDays2.innerText = 'Sun :';
+    const businessHourDescDays2 = genElemnText('div', 'businesshours_desc_days2', 'Sun :');
 
-    const businessHourDescTime2 = document.createElement('div');
-    businessHourDescTime2.id = 'businesshours_desc_time2';
-    businessHourDescTime2.innerText = 'Closed';
+    const businessHourDescTime2 = genElemnText('div', 'businesshours_desc_time2', 'Closed');
 
     businessHourDesc2.append(
         businessHourDescDays2,
