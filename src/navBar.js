@@ -1,56 +1,42 @@
 import { homeContentElems } from "./home";
 
+const genListItem = (idName, innertxt) => {
+    const listItem = document.createElement('li');
+    listItem.id = idName;
+    listItem.innerText = innertxt;
+    return listItem;
+}
+
 const navBar = () => {
     const contentDiv = document.getElementById('content');
 
     //insert navbar html into html here
     const navElem = document.createElement('nav');
     navElem.id = "nav_bar";
-
+    //create logo elem
     const navLogo = document.createElement('div');
     navLogo.id = "nav_logo";
     navLogo.innerText = "SomeCafe"
 
-
+    //create nav unordered list
     const unorderedListElem = document.createElement('ul');
-
-    const listItemHome = document.createElement('li');
-    listItemHome.id = 'home_tab';
-    listItemHome.innerText = 'Home';
-
-    const listItemDrinks = document.createElement('li');
-    listItemDrinks.id = 'drinks_tab';
-    listItemDrinks.innerText = "Drinks";
-
-    const listItemPastries = document.createElement('li');
-    listItemPastries.id = 'pastries_tab';
-    listItemPastries.innerText = "Pastries";
-
+    //create nav list items
+    const listItemHome = genListItem('home_tab', 'Home');
+    const listItemDrinks = genListItem('drinks_tab', 'Drinks');
+    const listItemPastries = genListItem('pastries_tab', 'Pastries');
+    const listItemContactUs = genListItem('contactus_tab', 'Contact');
     const listItemAboutUs = document.createElement('li');
     listItemAboutUs.id = 'aboutus_tab';
     listItemAboutUs.innerHTML = "About&nbsp;Us"
 
-    const listItemContactUs = document.createElement('li');
-    listItemContactUs.id = 'contactus_tab';
-    listItemContactUs.innerText = "Contact"
-
     //append list items into the unorderd list
-    unorderedListElem.appendChild(listItemHome);
-    unorderedListElem.appendChild(listItemDrinks);
-    unorderedListElem.appendChild(listItemPastries);
-    unorderedListElem.appendChild(listItemAboutUs);
-    unorderedListElem.appendChild(listItemContactUs);
+    unorderedListElem.append(listItemHome,listItemDrinks,listItemPastries,listItemAboutUs,listItemContactUs);
 
-
-
-    //append logo into nav element
-    navElem.appendChild(navLogo);
-    //append the unordered list into nav element
-    navElem.appendChild(unorderedListElem);
+    //append logo and unordered list into nav element
+    navElem.append(navLogo, unorderedListElem);
 
     //append the nav element into the content div
     contentDiv.appendChild(navElem);
-
 };
 
 const logoClick = () => {
