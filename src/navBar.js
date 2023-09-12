@@ -24,10 +24,9 @@ const navBar = () => {
     const listItemHome = genListItem('home_tab', 'Home');
     const listItemDrinks = genListItem('drinks_tab', 'Drinks');
     const listItemPastries = genListItem('pastries_tab', 'Pastries');
+    const listItemAboutUs = genListItem('aboutus_tab', '');
+    listItemAboutUs.innerHTML = 'About&nbsp;Us';
     const listItemContactUs = genListItem('contactus_tab', 'Contact');
-    const listItemAboutUs = document.createElement('li');
-    listItemAboutUs.id = 'aboutus_tab';
-    listItemAboutUs.innerHTML = "About&nbsp;Us"
 
     //append list items into the unorderd list
     unorderedListElem.append(listItemHome,listItemDrinks,listItemPastries,listItemAboutUs,listItemContactUs);
